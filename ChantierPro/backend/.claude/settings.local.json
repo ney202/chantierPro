@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Process *)",
+      "Bash(JAVA_HOME=C:/Users/hp/.jdks/ms-17.0.19 PATH=C:/Users/hp/.jdks/ms-17.0.19/bin:__TRACKED_VAR__ ./mvnw spring-boot:run)",
+      "Bash(echo \"PID=$!\")",
+      "Bash(mkdir -p /c/Temp)",
+      "Read(//c/Temp/**)",
+      "Bash(curl -s -v http://localhost:8080/api/auth/login -H 'Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ6ZXlhZEBjaGFudGllci5tYSIsImlhdCI6MTc4MTgzMzk0NiwiZXhwIjoxNzgxOTIwMzQ2fQ.CyU507JD1L5CZPWYSnPhf_53l5PmD4NlI8MR6FgHlDBe_MjrBgd8OVzqdkjZMKvr')",
+      "PowerShell(Get-Content \"C:\\\\Temp\\\\chantier-boot.log\" | Where-Object { $_ -match \"Exception|ERROR|jwt|JWT|Invalid|expired\" } | Select-Object -Last 20)",
+      "Bash(curl *)",
+      "PowerShell(Get-Content \"C:\\\\Temp\\\\chantier-boot.log\" | Where-Object { $_ -match \"JwtAuth|SecurityContext|FilterChain|protected|403|DENY|Granting|REJECT|principal\" } | Select-Object -Last 30)",
+      "PowerShell($env:JAVA_HOME = \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-25.0.2.10-hotspot\"; cd D:\\\\Smart-Chantier\\\\chantier-management; .\\\\mvnw.cmd compile -q 2>&1)",
+      "PowerShell(cd \"D:\\\\Smart-Chantier\\\\chantier-management\"; $env:JAVA_HOME = \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-25.0.2.10-hotspot\"; .\\\\mvnw compile 2>&1 | Select-Object -Last 15)",
+      "PowerShell($env:JAVA_HOME = \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-25.0.2.10-hotspot\"; $env:PATH = \"$env:JAVA_HOME\\\\bin;$env:PATH\"; Set-Location \"D:\\\\Smart-Chantier\\\\chantier-management\"; .\\\\mvnw.cmd compile 2>&1 | Select-String -Pattern \"ERROR|WARNING|BUILD|INFO: Compiling\" | ForEach-Object { $_.Line })",
+      "PowerShell($env:JAVA_HOME = \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-25.0.2.10-hotspot\"; $env:PATH = \"$env:JAVA_HOME\\\\bin;$env:PATH\"; Set-Location \"D:\\\\Smart-Chantier\\\\chantier-management\"; .\\\\mvnw.cmd compile 2>&1 | Select-String -Pattern \"ERROR|BUILD|Compiling|Downloading\" | ForEach-Object { $_.Line })",
+      "PowerShell($env:JAVA_HOME = \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-25.0.2.10-hotspot\"; $env:PATH = \"$env:JAVA_HOME\\\\bin;$env:PATH\"; Set-Location \"D:\\\\Smart-Chantier\\\\chantier-management\"; .\\\\mvnw.cmd dependency:tree 2>&1 | Select-String -Pattern \"springdoc|swagger\" | ForEach-Object { $_.Line })",
+      "PowerShell($env:JAVA_HOME = \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-25.0.2.10-hotspot\"; $env:PATH = \"$env:JAVA_HOME\\\\bin;$env:PATH\"; Set-Location \"D:\\\\Smart-Chantier\\\\chantier-management\"; .\\\\mvnw.cmd dependency:purge-local-repository -DmanualInclude=\"org.springdoc,io.swagger.core.v3\" -DreResolve=false 2>&1 | Select-String -Pattern \"Deleting|ERROR|BUILD\" | ForEach-Object { $_.Line })",
+      "PowerShell($env:JAVA_HOME = \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-25.0.2.10-hotspot\"; $env:PATH = \"$env:JAVA_HOME\\\\bin;$env:PATH\"; Set-Location \"D:\\\\Smart-Chantier\\\\chantier-management\"; .\\\\mvnw.cmd compile 2>&1 | Select-String -Pattern \"ERROR|error:|BUILD|Compiling|does not exist|cannot find\" | ForEach-Object { $_.Line })",
+      "PowerShell($env:JAVA_HOME = \"C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-25.0.2.10-hotspot\"; $env:PATH = \"$env:JAVA_HOME\\\\bin;$env:PATH\"; Set-Location \"D:\\\\Smart-Chantier\\\\chantier-management\"; .\\\\mvnw.cmd compile 2>&1 | Select-String -Pattern \"ERROR|error:|BUILD|Compiling|cannot find|does not exist\" | ForEach-Object { $_.Line })"
+    ]
+  }
+}
