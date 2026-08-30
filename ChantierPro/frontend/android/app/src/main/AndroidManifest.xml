@@ -40,9 +40,30 @@
     </application>
 
     <queries>
+        <!-- Nécessaire pour PROCESS_TEXT (sélection de texte) -->
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
+        </intent>
+
+        <!-- Nécessaire pour url_launcher : ouvrir des liens https (Google Maps, navigateur, etc.) -->
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="https"/>
+        </intent>
+
+        <!-- Optionnel mais recommandé : ouvrir des liens http (au cas où) -->
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="http"/>
+        </intent>
+
+        <!-- Optionnel : envoi d'emails si tu as ce genre de lien ailleurs dans l'app -->
+        <intent>
+            <action android:name="android.intent.action.SENDTO"/>
+            <data android:scheme="mailto"/>
         </intent>
     </queries>
 </manifest>
